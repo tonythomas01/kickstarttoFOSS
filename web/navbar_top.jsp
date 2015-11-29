@@ -35,11 +35,29 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="about.jsp">About</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="login.jsp">Sign In</a></li>
-            <li><a href="signup.jsp">Sign Up</a></li>
-          </ul>
+          <% 
+              if ( request.getSession().getAttribute("loggedinUserName") != null ) {
+                  String loggedinUser = request.getSession().getAttribute("loggedinUserName").toString();
+                  if( loggedinUser != null ) {
+                %>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= loggedinUser %> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="LogoutServlet">Logout</a></li>
+                </ul>
+               <%
+                }
+              }
+              else {
+                  %>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="login.jsp">Sign In</a></li>
+                  <li><a href="signup.jsp">Sign Up</a></li>
+                </ul>
+                <%
+              }
+          %>
+          
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->

@@ -4,6 +4,7 @@
     Author     : tony
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page session="true" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -14,16 +15,21 @@
     <title>Kickstarter to Open Source</title>
 </head>
 <body>
-<jsp:include page="navbar_top.jsp" />
+    <jsp:include page="navbar_top.jsp" />
 
 <div id="HomePage">
-<form>
-	<h1>Kickstarter to Open Source</h1>	
-</form>
+    <h1>Kickstarter to Open Source</h1>	
+    <% if( request.getSession().getAttribute("loggedinUserName") != null ) {
+        %>
+        <h1>Welcome, <%= request.getSession().getAttribute("loggedinUserName") %> </h1>
+        <%
+    } else {
+    %> <h1> Please login to continue </h1> <%
+    }
+    %>
+    
+    
 
-<div id="button">
-<p><a href="login.jsp">Login</p>
-</div>
 
 </div>
 
