@@ -3,7 +3,8 @@
 <head lang="en">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" href="css/font-awesome-4.4.0/css/font-awesome.min.css">
-    <title>Kickstarter to Open Source</title>
+        <jsp:include page="headers.jsp" />
+    <title>Kickstart to Open Source</title>
 </head>
 <body>
 <jsp:include page="navbar_top.jsp" />

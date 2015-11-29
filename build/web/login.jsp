@@ -2,32 +2,31 @@
 <html>
 <head lang="en">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+        <jsp:include page="headers.jsp" />
 	<link rel="stylesheet" href="css/font-awesome-4.4.0/css/font-awesome.min.css">
     <title>Kickstarter to Open Source</title>
 </head>
 <body>
 <jsp:include page="navbar_top.jsp" />
 
-<div id="loginpage">
-	<i class="fa fa-user fa-4x"></i>
-<form>
-	<p>LOGIN</p>
-	<div>
-		<input type="text" placeholder="Username"/>
-	</div>	
-	<div class="inp">
-		<input type="password" placeholder="Password"/>
-	</div>
-	<br><br>
-
-	<div class="inp">
-		<input type="submit" name="submit" value="Login">
-	</div>
-	<br>
-	<br>
-	<br>
-		Not a member ? Click <a href="signup.html">here</a> to sign up !
-</form>
+<div class="col-md-4 col-md-offset-4">
+    <div class="panel panel-default" style="text-align: center">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Login</div>
+      <div class="panel-body">
+          <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+      </div>
+    </div>
 </div>
 
 

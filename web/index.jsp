@@ -8,6 +8,7 @@
 <html>
 <head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <jsp:include page="headers.jsp" />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="css/font-awesome-4.4.0/css/font-awesome.min.css">
     <title>Kickstarter to Open Source</title>
@@ -21,7 +22,7 @@
 </form>
 
 <div id="button">
-<p><a href="login.jsp.html">Login</p>
+<p><a href="login.jsp">Login</p>
 </div>
 
 </div>
