@@ -14,7 +14,7 @@
       <!-- Default panel contents -->
       <div class="panel-heading">Login</div>
       <div class="panel-body">
-          <form>
+          <form method="GET" action="LoginServlet">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" class="form-control" name="email" placeholder="Email">
