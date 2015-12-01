@@ -9,26 +9,13 @@
 <body>
 <jsp:include page="navbar_top.jsp" />
 
-<div id="signuppage">
-<form>
-	<h1>Welcome New User. Sign Up to start contributing</h1>
-	<input type="text" name="Name" placeholder="Name">
-	<br>
-	<br>
-	<input type="radio" name="Type" value="student">Student
-	<br>
-	<input type="radio" name="Type" value="mentor">Mentor
-	<br>
-	<br>
-	<input type="email" name="email" placeholder="Email ID">
-	<br>
-	<br>
-	<input type="password" name="password" placeholder="Password">
-	<br>
-	<br>
-	<input type="password" name="repassword" placeholder="Confirm Password">
-	<input type="button" name="submit" value="Submit" onclick="profile.html">	
-</form>
+<div class="col-md-4 col-md-offset-4 well">
+    <h1 style="text-align: center">Organization<br><i class="fa fa-globe fa-5x"></i></h1>
+    <p style="text-align: center">
+    
+        <a href="view_organizations.jsp"><button type="button" class="btn btn-primary btn-lg">View existing</button></a>
+  <a href="create_organization.jsp"><button type="button" class="btn btn-default btn-lg">Add new</button></a>
+</p>
 </div>
 
 

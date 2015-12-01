@@ -43,6 +43,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= loggedinUser %> <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="LogoutServlet">Logout</a></li>
+                  <li><a href="organization.jsp">Organization</a></li>
                 </ul>
                <%
                 }

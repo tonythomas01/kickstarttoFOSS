@@ -3,6 +3,11 @@
     Created on : 29 Nov, 2015, 5:24:12 PM
     Author     : tony
 --%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page session="true" %>
 <!DOCTYPE html>
@@ -16,23 +21,33 @@
 </head>
 <body>
     <jsp:include page="navbar_top.jsp" />
-
-<div id="HomePage">
-    <h1>Kickstarter to Open Source</h1>	
-    <% if( request.getSession().getAttribute("loggedinUserName") != null ) {
-        %>
-        <h1>Welcome, <%= request.getSession().getAttribute("loggedinUserName") %> </h1>
+<div class="row" style="padding-top: 10%">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="input-group">
+        <input type="text" list="organizations" class="form-control" placeholder="Search for mentors.."/>
+        <datalist id="organizations">
         <%
-    } else {
-    %> <h1> Please login to continue </h1> <%
-    }
-    %>
-    
-    
-
-
-</div>
-
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/login", "root", "toor"); 
+                String selectUser = "SELECT `org_name` FROM `organization`";
+                PreparedStatement ps = conn.prepareStatement(selectUser);
+                ResultSet rs = ps.executeQuery();
+                while( rs.next() ) {
+                    
+                    //Get user name 
+                    String orgName = rs.getString("org_name");
+                    %>
+                    
+                    <option value="<%= orgName %>"><%
+                }               
+            %>
+      </datalist>
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
 
 </body>
 </html>
