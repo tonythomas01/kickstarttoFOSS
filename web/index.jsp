@@ -23,8 +23,9 @@
     <jsp:include page="navbar_top.jsp" />
 <div class="row" style="padding-top: 10%">
   <div class="col-md-6 col-md-offset-3">
-    <div class="input-group">
-        <input type="text" list="organizations" class="form-control" placeholder="Search for mentors.."/>
+    <form method="get" action="listOrganizations.jsp">
+      <div class="input-group">
+        <input required type="text" list="organizations" class="form-control" name="searched_organization" placeholder="Search for mentors.."/>
         <datalist id="organizations">
         <%
                 Class.forName("com.mysql.jdbc.Driver");
@@ -43,8 +44,9 @@
             %>
       </datalist>
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
+          <button class="btn btn-default" type="button" type="submit">Go!</button>
       </span>
+    </form>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
